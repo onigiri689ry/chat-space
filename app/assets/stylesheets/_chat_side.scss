@@ -1,0 +1,53 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.chat-side {
+  width: 300px;
+  background-color: #2f3e51;
+  color: white;
+  .side-header {
+    background-color: #253141;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .side-box {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      .user-name{
+        font-size: 16px;
+      }
+      .menu{
+        display: flex;
+      }
+      .kaku {
+        margin-right: 5px;
+        color: white;
+      }
+      .settei {
+        color: white;
+      }
+    }
+  }
+}
+
+
+.groups {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  margin:15px 20px;
+  color:white;
+  .classname {
+    font-size: 15px;
+  }
+  .message{
+    font-size: 11px;
+    margin-top: 5px;
+  }
+}
+
+

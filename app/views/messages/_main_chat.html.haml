@@ -1,0 +1,35 @@
+.chat-main
+  .main-header
+    .main-header-left
+      %h2.current-group
+        test
+      %lu.member
+        Member:masa
+    .edit-btn
+      = link_to "Edit"
+  .messages
+    .messages2
+      .messages-ue
+        %p.talker
+          masa
+        %p.date
+          2019/11/20(wed) 17:43:01
+      %p.text
+        おはよう！
+    .messages3
+      .messages-ue
+        %p.talker
+          aaa
+        %p.date
+          2019/11/21(thu) 13:42:11
+      %p.text
+        こんにちは！
+  .form
+    %form.new-message
+    .input-box
+      %input.input-text{:placeholder => "type a message", :type => "text"}/
+      %label{class: "input-box__image", for: "file"}
+        = icon('fas', 'image')
+        %input{type: "file", id: "file", class: "input_file"}
+      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+  
