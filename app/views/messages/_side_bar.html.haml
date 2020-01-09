@@ -5,12 +5,15 @@
       %h3.user-name
         = current_user.name
       %ul.menu
-        = link_to "#", class: "kaku" do
+        = link_to new_group_path, class: "kaku" do
           %i.fa.fa-edit
         = link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: 'settei')
-  .groups
-    %p.classname
-      techcamp
-    %p.message
-      まだメッセージがありません
+  .side-bar__groups-list
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません。
