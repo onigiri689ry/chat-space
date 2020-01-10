@@ -2,9 +2,9 @@
   .main-header
     .main-header-left
       %h2.current-group
-        test
+        = @group.name
       %lu.member
-        Member:masa
+        = current_user.name
     .edit-btn
       = link_to "Edit"
   .messages
