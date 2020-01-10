@@ -25,11 +25,12 @@
       %p.text
         こんにちは！
   .form
-    %form.new-message
+    = form_for class:'new-message'[@group, @message] do |f|
     .input-box
-      %input.input-text{:placeholder => "type a message", :type => "text"}/
-      %label{class: "input-box__image", for: "file"}
-        = icon('fas', 'image')
-        %input{type: "file", id: "file", class: "input_file"}
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+      = f.text_field :content, class:'input-text', placeholder: 'type a message'
+      = f.label :image, class: 'input-box__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'input_file'
+      = f.submit 'Send', class: 'submit-btn'
+  
   
