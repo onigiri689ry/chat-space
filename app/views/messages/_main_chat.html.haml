@@ -8,6 +8,7 @@
     .edit-btn
       = link_to "Edit"
   .messages
+    = render @messages
     .messages2
       .messages-ue
         %p.talker
@@ -25,12 +26,12 @@
       %p.text
         こんにちは！
   .form
-    = form_for class:'new-message'[@group, @message] do |f|
-    .input-box
-      = f.text_field :content, class:'input-text', placeholder: 'type a message'
-      = f.label :image, class: 'input-box__image' do
-        = icon('fas', 'image', class: 'icon')
-        = f.file_field :image, class: 'input_file'
-      = f.submit 'Send', class: 'submit-btn'
-  
+    = form_for [@group, @message], class:'new-message' do |f|
+      .input-box
+        = f.text_field :content, class:'input-text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input_file'
+        = f.submit 'Send', class: 'submit-btn'
+    
   
