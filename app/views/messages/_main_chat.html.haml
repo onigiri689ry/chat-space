@@ -2,12 +2,14 @@
   .main-header
     .main-header-left
       %h2.current-group
-        test
+        = @group.name
       %lu.member
-        Member:masa
+        = current_user.name
     .edit-btn
-      = link_to "Edit"
+      = link_to edit_group_path(@group) do
+        edit
   .messages
+    = render @messages
     .messages2
       .messages-ue
         %p.talker
@@ -25,11 +27,12 @@
       %p.text
         こんにちは！
   .form
-    %form.new-message
-    .input-box
-      %input.input-text{:placeholder => "type a message", :type => "text"}/
-      %label{class: "input-box__image", for: "file"}
-        = icon('fas', 'image')
-        %input{type: "file", id: "file", class: "input_file"}
-      %input.submit-btn{:name => "commit", :type => "submit", :value => "Send"}/
+    = form_for [@group, @message], class:'new-message' do |f|
+      .input-box
+        = f.text_field :content, class:'input-text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input_file'
+        = f.submit 'Send', class: 'submit-btn'
+    
   
