@@ -1,3 +1,29 @@
 *{
   box-sizing: border-box;
 }
+
+
+.message {
+  padding-bottom: 40px;
+  .upper-message {
+    margin-bottom: 10px;
+    display: flex;
+    .upper-message__user-name{
+      color: #333333;
+      font-size: 16px;
+    }
+    .upper-message__date{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 10px;
+    }
+  }
+  .lower-message {
+    color: #434A54;
+    font-size: 14px;
+  }
+}
+.lower-message__content {
+  color: #434A54;
+  font-size: 14px;
+}
