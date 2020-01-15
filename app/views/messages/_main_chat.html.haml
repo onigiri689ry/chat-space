@@ -4,7 +4,8 @@
       %h2.current-group
         = @group.name
       %lu.member
-        = current_user.name
+        - @group.users.each do |user|
+          =user.name
     .edit-btn
       = link_to edit_group_path(@group) do
         edit
@@ -34,5 +35,3 @@
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'input_file'
         = f.submit 'Send', class: 'submit-btn'
-    
-  
