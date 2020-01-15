@@ -12,21 +12,21 @@
   .messages
     = render @messages
     .messages2
-      .messages-ue
-        %p.talker
-          masa
-        %p.date
-          2019/11/20(wed) 17:43:01
-      %p.text
-        おはよう！
-    .messages3
-      .messages-ue
-        %p.talker
-          aaa
-        %p.date
-          2019/11/21(thu) 13:42:11
-      %p.text
-        こんにちは！
+    -#   .messages-ue
+    -#     %p.talker
+    -#       masa
+    -#     %p.date
+    -#       2019/11/20(wed) 17:43:01
+    -#   %p.text
+    -#     おはよう！
+    -# .messages3
+    -#   .messages-ue
+    -#     %p.talker
+    -#       aaa
+    -#     %p.date
+    -#       2019/11/21(thu) 13:42:11
+    -#   %p.text
+    -#     こんにちは！
   .form
     = form_for [@group, @message], class:'new-message' do |f|
       .input-box
