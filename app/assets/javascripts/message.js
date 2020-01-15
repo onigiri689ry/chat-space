@@ -107,6 +107,7 @@ $(function(){
       }
     })
     .fail(function() {
+      alert("読み込み失敗");
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
